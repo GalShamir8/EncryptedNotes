@@ -1,8 +1,10 @@
-package com.example.encryptednotes;
+package com.example.encryptednotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.encryptednotes.R;
 
 public class MainActivity extends AppCompatActivity {
 
