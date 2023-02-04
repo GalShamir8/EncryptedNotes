@@ -81,5 +81,11 @@ public class EncryptedSharedPreference {
     private Note buildNote(String header, String content) {
         return new Note(header, getString(header));
     }
+
+    public void delete(String key){
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.remove(key);
+        editor.apply();
+    }
 }
 
