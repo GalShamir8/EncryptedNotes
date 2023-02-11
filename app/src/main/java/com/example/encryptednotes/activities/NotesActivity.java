@@ -1,4 +1,5 @@
 package com.example.encryptednotes.activities;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 public class NotesActivity extends AppCompatActivity {
 
-
+    private static final int REQUEST_PWD_PROMPT = 1;
     private EditText mNoteEditText;
     private EditText mNoteHeaderEditText;
     private Button mSaveButton;
@@ -34,6 +35,20 @@ public class NotesActivity extends AppCompatActivity {
         }
 
         loadNotes();
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        // see if this is being called from our password request..?
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_PWD_PROMPT) {
+            // ..it is. Did the user get the password right?
+            if (resultCode == RESULT_OK) {
+                // they got it right
+            } else {
+                // they got it wrong/cancelled
+            }
+        }
     }
 
     private void loadNotes() {
