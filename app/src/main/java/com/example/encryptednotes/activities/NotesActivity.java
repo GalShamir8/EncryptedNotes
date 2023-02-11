@@ -10,11 +10,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.encryptednotes.R;
-import com.example.encryptednotes.models.Note;
 import com.example.encryptednotes.shared.EncryptedSharedPreference;
 import com.google.android.material.button.MaterialButton;
 
-import java.util.ArrayList;
 
 public class NotesActivity extends AppCompatActivity {
 
@@ -36,8 +34,6 @@ public class NotesActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//        loadNotes();
     }
 
     @Override
@@ -52,10 +48,6 @@ public class NotesActivity extends AppCompatActivity {
                 // they got it wrong/cancelled
             }
         }
-    }
-
-    private void loadNotes() {
-        ArrayList<Note> notes = mEncryptedSharedPreference.getAlNotes();
     }
 
     private void setListeners() {
