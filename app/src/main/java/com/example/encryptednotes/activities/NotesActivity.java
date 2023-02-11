@@ -1,7 +1,9 @@
 package com.example.encryptednotes.activities;
+import static com.example.encryptednotes.shared.Keys.HEADER_KEY;
+import static com.example.encryptednotes.shared.Keys.NOTE_KEY;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.encryptednotes.R;
 import com.example.encryptednotes.models.Note;
 import com.example.encryptednotes.shared.EncryptedSharedPreference;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 
@@ -18,7 +21,7 @@ public class NotesActivity extends AppCompatActivity {
     private static final int REQUEST_PWD_PROMPT = 1;
     private EditText mNoteEditText;
     private EditText mNoteHeaderEditText;
-    private Button mSaveButton;
+    private MaterialButton mSaveButton;
     private EncryptedSharedPreference mEncryptedSharedPreference;
 
     @Override
@@ -34,7 +37,7 @@ public class NotesActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        loadNotes();
+//        loadNotes();
     }
 
     @Override
@@ -74,5 +77,11 @@ public class NotesActivity extends AppCompatActivity {
         mNoteEditText = findViewById(R.id.note_edit_text);
         mNoteHeaderEditText = findViewById(R.id.note_header_edit_text);
         mSaveButton = findViewById(R.id.save_button);
+        String header = getIntent().getExtras().getString(HEADER_KEY);
+        String content = getIntent().getExtras().getString(NOTE_KEY);
+        if (header != null)
+            mNoteHeaderEditText.setText(header);
+        if (content != null)
+            mNoteEditText.setText(content);
     }
 }

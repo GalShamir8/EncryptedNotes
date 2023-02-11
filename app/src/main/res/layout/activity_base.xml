@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activities.BaseActivity">
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/notes_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/new_note_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    app:cornerRadius="20dp"
+    android:textAlignment="center"
+    android:textStyle="italic"
+    android:textColor="@color/black"
+    android:backgroundTint="@color/teal_200"
+    android:layout_gravity="center"
+    android:text="@string/create_new_note"/>
+
+</LinearLayout>
