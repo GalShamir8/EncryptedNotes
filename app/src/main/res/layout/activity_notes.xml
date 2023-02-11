@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#DCDCAB">
 
     <EditText
         android:id="@+id/note_header_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter note header"
+        android:hint="@string/enter_note_header"
         android:inputType="text" />
 
     <EditText
@@ -17,13 +19,20 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top|start"
-        android:hint="Enter note"
+        android:hint="@string/enter_note"
         android:inputType="textMultiLine" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:padding="20dp"
+        app:cornerRadius="20dp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        android:layout_gravity="center"
+        android:text="@string/save"/>
 
 </LinearLayout>

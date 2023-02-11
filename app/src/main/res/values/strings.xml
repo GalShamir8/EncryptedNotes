@@ -2,4 +2,6 @@
     <string name="app_name">EncryptedNotes</string>
     <string name="save">Save</string>
     <string name="create_new_note">Create New Note</string>
+    <string name="enter_note">Enter note</string>
+    <string name="enter_note_header">Enter note header</string>
 </resources>

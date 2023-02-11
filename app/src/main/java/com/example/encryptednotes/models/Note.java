@@ -1,8 +1,8 @@
 package com.example.encryptednotes.models;
 
 public class Note {
-    private String header;
-    private String content;
+    private String header = "";
+    private String content = "";
 
     public Note() { }
 
