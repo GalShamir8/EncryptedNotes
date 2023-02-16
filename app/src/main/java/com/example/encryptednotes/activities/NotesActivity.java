@@ -20,6 +20,7 @@ public class NotesActivity extends AppCompatActivity {
     private EditText mNoteEditText;
     private EditText mNoteHeaderEditText;
     private MaterialButton mSaveButton;
+    private MaterialButton mDeleteButton;
     private EncryptedSharedPreference mEncryptedSharedPreference;
 
     @Override
@@ -52,6 +53,13 @@ public class NotesActivity extends AppCompatActivity {
 
     private void setListeners() {
         mSaveButton.setOnClickListener(e -> saveNote());
+        mDeleteButton.setOnClickListener(e -> deleteNote());
+    }
+
+    private void deleteNote() {
+        String header = mNoteHeaderEditText.getText().toString();
+        mEncryptedSharedPreference.delete(header);
+        Toast.makeText(this, "Note deleted", Toast.LENGTH_SHORT).show();
     }
 
     private void saveNote() {
@@ -69,6 +77,7 @@ public class NotesActivity extends AppCompatActivity {
         mNoteEditText = findViewById(R.id.note_edit_text);
         mNoteHeaderEditText = findViewById(R.id.note_header_edit_text);
         mSaveButton = findViewById(R.id.save_button);
+        mDeleteButton = findViewById(R.id.delete_button);
         String header = getIntent().getExtras().getString(HEADER_KEY);
         String content = getIntent().getExtras().getString(NOTE_KEY);
         if (header != null)
